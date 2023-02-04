@@ -1,6 +1,6 @@
 # 🛠 Sass - Admin panel
 
-# 🔗 [Live Preview]()
+# 🔗 [Live Preview](https://stately-rabanadas-563c44.netlify.app/)
 ![Design preview](./assets/images/preview.png)
 
 ## Welcome! 👋
