@@ -1,0 +1,102 @@
+
+// ------ ↓ LEFT section ↓ -------
+
+// modules used
+@use '../modules/global' as *;
+@use '../modules/mixins' as *;
+@use '../modules/variables' as *;
+
+
+.left__section {
+
+    @media (max-width: 768px){
+        @include width-height(18rem, 100vh);
+        @include position(fixed, auto, auto, auto, -100%);
+        background-color: $white;
+        z-index: 3;
+        box-shadow: 1rem 3rem 4rem $light;
+        padding-right: $card-padding;
+        display: none;
+        animation: showMenu 400ms ease forwards;
+        
+        @keyframes showMenu {
+            to {
+                left: 0;
+            }
+        }
+    }
+
+    &__header {
+        @include flex(space-between, center, row nowrap, 0.5rem);
+        padding: 1.5rem 0 0 1.8rem;
+    
+            &__img {
+                @include width-height(2.3rem, 2.3rem);
+            }
+    
+            &__h3 {
+                @media (max-width: 1300px){
+                    display: none;
+                }
+                @media (max-width: 768px){
+                    display: inline;
+                }
+            }
+    
+            .left__section__header__closeBtn {
+                display: none;
+    
+                @media (max-width: 768px){
+                    display: inline-block;
+                    cursor: pointer;
+                    padding: 0.5rem;
+                }
+            }
+        }
+
+    &__nav {
+        @include flex(flex-start, normal, column nowrap);
+        background-color: $white;
+        height: 86vh;
+        position: relative;
+        padding-top: 2rem;
+    
+        &__a {
+            @include flex(flex-start, center, row nowrap, 1rem);
+            color: $dark-variant;
+            padding-left: 2rem;
+            height: 3.5rem;
+            transition: 200ms ease-in;
+            
+            &:hover {
+                color: $primary;
+                background-color: $light;
+                margin-left: 1rem;
+            }
+
+            span {
+                color: $primary;
+            }
+
+            .left__section__nav__h3 {
+                font-weight: 500;
+                
+                @media (max-width: 1300px){
+                    display: none;
+                }
+                @media (max-width: 768px){
+                    display: inline;
+                }
+            }
+        }
+        
+        &__a:last-child {
+                margin-top: 7rem;
+        }
+    }
+}
+
+
+
+
+

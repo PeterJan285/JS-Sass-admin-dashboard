@@ -1,0 +1,130 @@
+// -------------------------------------------
+// ------------ RIGHT section ----------------
+// ----- ↓↓↓ --------------------- ↓↓↓ -------
+
+@use '../modules/global' as *;
+@use '../modules/mixins' as *;
+@use '../modules/variables' as *;
+
+.right__section {
+    margin-top: 1.4rem;
+
+    @media (max-width: 768px){
+        width: 94%;
+        margin: 0 auto 4rem;
+    }
+
+    &__top {
+        @include flex(flex-end, center, row nowrap, 2rem);
+
+        @media (max-width: 768px){
+            @include width-height(100%, 4.6rem);
+            @include margin-padding(0, 0 0.8rem);
+            @include position(fixed, 0, auto, auto, 0);
+            align-items: center;
+            background-color: $white;
+            z-index: 2;
+            box-shadow: 0 1rem 1rem $light;
+        }
+
+        #menu-btn {
+            display: none;
+
+            @media (max-width: 768px){
+                @include position(absolute, auto, auto, auto, 1rem);
+                display: inline-block;
+                background-color: transparent;
+                cursor: pointer;
+                color: $dark;
+            }
+        }
+
+        &__admin {
+            @include flex(flex-start, center, row nowrap, 2rem);
+        }
+    }
+}
+
+
+// --- SUBsection RECENT DONORS ---
+
+.right__section .recent__donors {
+    margin-top: 1rem;
+    width: 98%;
+
+    h2 {
+        margin-bottom: 1rem;
+    }
+
+    &__content {
+        padding: $card-padding;
+        border-radius: $card-border-radius;
+        box-shadow: $box-shadow;
+        transition: 300ms ease-in;
+        background-color: $white;
+        border: 1px solid $info-light;
+
+        &:hover {
+            box-shadow: none;
+        }
+
+        &__info {
+            @include grid(center, 1rem, 2.6rem auto);
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+
+// --- SUBsection ANALYTICS ---
+ 
+.right__section .analytics {
+    margin-top: 2rem;
+    width: 98%;
+
+    h2{
+        margin-bottom: 0.8rem;
+    }
+
+    &__container {
+        @include flex(flex-start, center, row nowrap, 1rem);
+        @include margin-padding(0 0 0.7rem 0, $card-padding);
+        background-color: $white;
+        border-radius: $border-radius-3;
+        box-shadow: $box-shadow;
+        transition: 300ms ease-in;
+        border: 1px solid $info-light;
+
+        &:hover {
+            box-shadow: none;
+        }
+
+
+        // find out what class is this !!
+        .right {
+            @include flex(space-between, flex-start, row nowrap);
+            margin: 0;
+            width: 100%;
+            background-color: red;
+        }
+
+        &__icon {
+            @include flex();
+            padding: 0.6rem;
+            color: $white;
+            border-radius: 50%;
+            background-color: $primary;
+        }
+    }
+}
+
+// -- customized icon colors --
+#analytics__danger {
+        background-color: $danger;
+    }
+
+#analytics__success {
+        background-color: $success;
+    }
+
+ //------ ↑↑↑ END of RIGHT section ↑↑↑ -------

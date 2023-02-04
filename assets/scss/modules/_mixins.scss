@@ -1,0 +1,44 @@
+
+// MIXINS MODULE
+
+@mixin flex($justify: flex-start, $align: center, $flow: row nowrap, $gap: 0) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-flow: $flow;
+    gap: $gap;
+}
+
+@mixin grid($place-items, $gap, $grid-template-columns) {
+    display: grid;
+    place-items: $place-items;
+    gap: $gap;
+    grid-template-columns: $grid-template-columns;
+}
+
+@mixin position($position, $top: auto, $right: auto, $bottom: auto, $left: auto) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin text($size, $color, $font-family: $text-font, $weight: normal, $border-radius: none, $border: none) {
+    font-size: $size;
+    color: $color;
+    font-family: $font-family;
+    font-weight: $weight;
+    border-radius: $border-radius;
+    border: $border;
+}
+
+@mixin width-height($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin margin-padding($margin, $padding) {
+    margin: $margin;
+    padding: $padding;
+}

@@ -1,0 +1,68 @@
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+
+* {
+    @include margin-padding(0, 0);
+    outline: 0;
+    appearance: none;
+    border: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    }
+
+html {
+    font-size: 0.875rem;
+}
+
+body {
+    @include width-height(100vw, 100vh);
+    font-family: 'poppins';
+    font-size: 0.88rem;
+    user-select: none;
+    overflow-x: hidden;
+    color: $dark;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+small {
+    font-size: 0.75;
+}
+
+.profile__photos__global {
+    @include width-height(2.8rem, 2.8rem);
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.text-muted {
+     color: $info-dark;
+}
+
+p {
+    color: $dark-variant;
+}
+
+b {
+    color: $dark;
+}
+
+.container {
+    @include grid(stretch, 1.8rem, 14rem auto 20rem);
+    width: 96%;
+    margin: 0 auto;
+
+    @media (max-width: 1300px){
+        grid-template-columns: 7rem auto 20rem;
+    }
+    @media (max-width: 768px) {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+}
